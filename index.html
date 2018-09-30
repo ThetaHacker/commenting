@@ -3,12 +3,13 @@
   <button onclick="postc()">POST!</button>
 </body>
 <script>
-  function senddata(comment) {
-    var eSocket = new WebSocket("wss://localhost:9030");
-    eSocket.send(comment);
-    eSocket.onmessage = function (event) {
-      document.body.innerHTML = event.data;
+  var eSocket = new WebSocket("wss://localhost:9030");
+  eSocket.onmessage = function (event) {
+      alert(event.data);
     }
+  function senddata(comment) {
+    eSocket.send(comment);
+    
   }
   function postc() {
     senddata(document.getElementById("commentd").value);
@@ -16,4 +17,4 @@
   
 </script>
 
-<script src="server.js"></script>
+<script src="\server.js"></script>
