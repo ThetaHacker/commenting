@@ -1,1 +1,17 @@
-
+<body>  
+  <textbox id="commentd"></textbox>
+  <button onclick="postc()">POST!</button>
+</body>
+<script>
+  function senddata(comment) {
+    var eSocket = new WebSocket("wss://ThetaHacker.github.io/commenting/index.html");
+    eSocket.send(comment);
+    eSocket.onmessage = function (event) {
+      document.body.innerHTML = event.data;
+    }
+  }
+  function postc() {
+    senddata(document.getElementById("commentd"));
+  }
+  
+</script>
