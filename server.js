@@ -7,6 +7,7 @@ ws.on('connection', function(w){
   
   w.on('message', function(msg){
     console.log('message from client');
+    w.send("loool")
   });
   
   w.on('close', function() {
