@@ -4,7 +4,7 @@
 </body>
 <script>
   function senddata(comment) {
-    var eSocket = new WebSocket("wss://ThetaHacker.github.io/commenting/index.html");
+    var eSocket = new WebSocket("wss://ThetaHacker.github.io/commenting/server.js:9030");
     eSocket.send(comment);
     eSocket.onmessage = function (event) {
       document.body.innerHTML = event.data;
