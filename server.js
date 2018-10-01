@@ -6,8 +6,7 @@ var ws = new Server({port: port});
 ws.on('connection', function(w){
   
   w.on('message', function(msg){
-    console.log('message from client');
-    w.send("loool")
+    console.log('message from client');)
   });
   
   w.on('close', function() {
